@@ -1,23 +1,10 @@
-import { useState } from 'react';
-import { ConfirmationMessage } from './components/ConfirmationMessage';
-import { MoodSelector } from './components/MoodSelector';
-import "./App.css"
-const App = () => {
-  const [submittedMood, setSubmittedMood] = useState();
+import React from 'react'
+import MoodTracker from './components/MoodTracker'
 
-  const handleMoodSubmit = (mood) => {
-    setSubmittedMood(mood);
-  };
-
+export default function App() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-slate-800">
-      {submittedMood ? (
-        <ConfirmationMessage mood={submittedMood} />
-      ) : (
-        <MoodSelector onSelect={handleMoodSubmit} />
-      )}
+    <div>
+      <MoodTracker />
     </div>
-  );
-};
-
-export default App;
+  )
+}
