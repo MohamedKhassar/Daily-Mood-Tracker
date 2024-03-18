@@ -4,7 +4,7 @@ import MoodTracker from './components/MoodTracker';
 import App from './App';
 
 describe('MoodTracker Component', () => {
-  test('MoodTracker Component', () => {
+  it('MoodTracker Component', () => {
     render(<MoodTracker />);
     const headerElement = screen.getByText('please could you pick your mood');
     expect(headerElement).toBeInTheDocument();
@@ -14,7 +14,7 @@ describe('MoodTracker Component', () => {
 
   });
 
-  test('displays ConfirmationMood component after selecting mood', () => {
+  it('displays ConfirmationMood component after selecting mood', () => {
     render(<App />);
     const happyEmoji = screen.getByAltText('Happy');
     fireEvent.click(happyEmoji);
